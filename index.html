@@ -210,11 +210,14 @@
 
 <script>
     /* =========================================
-       1. BLOCK ZOOMING (Force Mobile Fix)
+       1. BLOCK ZOOMING (SCROLL-SAFE)
        ========================================= */
-    // Prevent Pinch-to-Zoom
+    // Only prevent touch if using TWO fingers (Pinch)
+    // This allows single-finger scrolling to work!
     document.addEventListener('touchmove', function(event) {
-        if (event.scale !== 1) { event.preventDefault(); }
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
     }, { passive: false });
 
     // Prevent Double-Tap-to-Zoom
@@ -231,7 +234,6 @@
     /* =========================================
        2. SECURITY: RIGHT CLICK & BLUR
        ========================================= */
-    // Disable Right Click
     document.addEventListener('contextmenu', event => event.preventDefault());
 
     // Instant Blur on Click-Away
@@ -240,7 +242,6 @@
         document.title = "Protected Content"; 
     });
 
-    // Wait before Un-Blurring (Anti-Spam)
     window.addEventListener('focus', () => {
         setTimeout(() => {
             document.body.classList.remove('blur-content');
@@ -248,7 +249,6 @@
         }, 300); 
     });
 
-    // Disable Printing
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P')) {
             e.preventDefault();
@@ -259,7 +259,6 @@
     /* =========================================
        3. VISUAL LOGIC
        ========================================= */
-    // Scroll Progress
     window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -267,7 +266,6 @@
         document.getElementById('scroll-progress').style.width = scrollPercentage + '%';
     });
 
-    // Tab Logic
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
     function opentab(tabname){
@@ -277,15 +275,12 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
     
-    // Mobile Menu
     var sidemenu = document.getElementById("sidemenu");
     function openmenu(){ sidemenu.style.right = "0"; }
     function closemenu(){ sidemenu.style.right = "-200px"; }
 
-    // Particles Init
     particlesJS("particles-js", { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
-    // Scroll Reveal Init
     const sr = ScrollReveal({ distance: '60px', duration: 2500, delay: 400, reset: true });
     sr.reveal('.header-text', {delay: 200, origin: 'left'});
     sr.reveal('.about-col-1', {delay: 200, origin: 'bottom'});
@@ -294,14 +289,12 @@
     sr.reveal('.project-card', {interval: 200});
     sr.reveal('.contact-left', {delay: 200, origin: 'left'});
 
-    // Back to Top Button
     let mybutton = document.getElementById("backToTopBtn");
     window.addEventListener('scroll', () => {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { mybutton.style.display = "block"; } else { mybutton.style.display = "none"; } 
     });
     function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
     
-    // 3D Tilt Init
     VanillaTilt.init(document.querySelectorAll(".project-card"), {
         max: 25,
         speed: 400,
