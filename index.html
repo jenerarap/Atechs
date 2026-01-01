@@ -29,15 +29,20 @@
     
     <nav>
         <img src="logo.jpg" class="logo" alt="Logo">
+        
         <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li> 
-            <li><a href="#projects">My Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#header" onclick="closemenu()">Home</a></li>
+            <li><a href="#about" onclick="closemenu()">About</a></li> 
+            <li><a href="#projects" onclick="closemenu()">My Projects</a></li>
+            <li><a href="#contact" onclick="closemenu()">Contact</a></li>
             <li><a href="http://www.youtube.com/@Mr.Atechs" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
             <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
         </ul>
-        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+
+        <div class="nav-right-mobile">
+            <a href="http://www.youtube.com/@Mr.Atechs" target="_blank" class="mobile-yt-icon"><i class="fa-brands fa-youtube"></i></a>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </div>
     </nav>
         
     <div class="container">
@@ -212,14 +217,12 @@
     /* =========================================
        1. BLOCK ZOOMING (SCROLL-SAFE)
        ========================================= */
-    // Only prevent touch if using TWO fingers (Pinch)
     document.addEventListener('touchmove', function(event) {
         if (event.touches.length > 1) {
             event.preventDefault();
         }
     }, { passive: false });
 
-    // Prevent Double-Tap-to-Zoom
     var lastTouchEnd = 0;
     document.addEventListener('touchend', function(event) {
         var now = (new Date()).getTime();
@@ -255,8 +258,8 @@
     function openmenu(){ sidemenu.style.right = "0"; }
     function closemenu(){ sidemenu.style.right = "-200px"; }
 
-    // Particles Init
-    particlesJS("particles-js", { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+    // Particles Init - CHANGED SPEED TO 1 (Slower)
+    particlesJS("particles-js", { "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
     // Scroll Reveal Init
     const sr = ScrollReveal({ distance: '60px', duration: 2500, delay: 400, reset: true });
