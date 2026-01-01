@@ -21,7 +21,6 @@ body {
     background: #080808;
     color: #fff;
     overflow-x: hidden;
-    /* Removed text-selection block as requested */
 }
 
 /* CUSTOM SCROLLBAR */
@@ -102,6 +101,11 @@ nav ul li a.yt-btn {
 }
 nav ul li a.yt-btn::after { display: none !important; }
 nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transform: scale(1.05); }
+
+/* NEW MOBILE ICONS CONTAINER */
+.nav-right-mobile {
+    display: none; /* Hidden on desktop */
+}
 
 .container { padding: 10px 10%; max-width: 100%; position: relative; z-index: 1; }
 
@@ -257,7 +261,27 @@ nav .fa-solid { display: none; }
     .header-text h1 { font-size: 35px; }
     
     nav { padding: 10px 5%; background: #080808; }
+    
+    /* Reveal Mobile elements */
+    .nav-right-mobile {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Space between YouTube icon and Hamburger */
+    }
+
     nav .fa-solid { display: block; font-size: 25px; }
+    
+    /* Styling for the Mobile-Only YouTube Icon */
+    .mobile-yt-icon {
+        color: #AF0B0B; /* Red Icon */
+        font-size: 28px;
+        transition: transform 0.3s;
+    }
+    .mobile-yt-icon:active {
+        transform: scale(0.9);
+    }
+
+    /* Side Menu */
     nav ul { 
         background: #AF0B0B; /* Red Mobile Menu */
         position: fixed; 
@@ -273,8 +297,7 @@ nav .fa-solid { display: none; }
     nav ul li { display: block; margin: 25px; }
     nav ul .fa-solid { position: absolute; top: 25px; left: 25px; cursor: pointer; }
     
-    /* FIX FOR YOUTUBE BUTTON VISIBILITY ON MOBILE */
-    /* Since menu is Red, we make button White so it pops out */
+    /* Make the menu button inside the drawer White so it's visible */
     nav ul li a.yt-btn {
         background: #fff;
         color: #AF0B0B;
