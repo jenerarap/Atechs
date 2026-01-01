@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* CRITICAL: DISABLES BROWSER ZOOM GESTURES */
+/* DISABLE BROWSER ZOOM GESTURES */
 html, body {
     touch-action: pan-x pan-y;
 }
@@ -21,23 +21,7 @@ body {
     background: #080808;
     color: #fff;
     overflow-x: hidden;
-    
-    /* PREVENT TEXT SELECTION (Anti-Copy) */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    /* Base transition for returning from blur */
-    transition: filter 0.3s ease-out;
-}
-
-/* Allow text selection only in inputs/textareas */
-input, textarea {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+    /* Removed text-selection block as requested */
 }
 
 /* CUSTOM SCROLLBAR */
@@ -263,25 +247,7 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 #backToTopBtn:hover { background-color: #ff004f; transform: scale(1.1); }
 
 /* ------------------------------------------------
-   7. SECURITY: ANTI-SCREENSHOT & ANTI-PRINT
------------------------------------------------- */
-
-/* BLUR STATE: Instant, heavy blur. No transition time allowed. */
-.blur-content {
-    filter: blur(25px) grayscale(100%) !important; /* Heavy blur + B&W */
-    transition: none !important; /* INSTANT BLUR */
-    pointer-events: none; /* Block clicks */
-}
-
-/* Hide content if user tries to print (Ctrl+P) */
-@media print {
-    html, body {
-        display: none !important;
-    }
-}
-
-/* ------------------------------------------------
-   8. RESPONSIVE DESIGN (MOBILE)
+   7. RESPONSIVE DESIGN (MOBILE)
 ------------------------------------------------ */
 nav .fa-solid { display: none; }
 
@@ -293,7 +259,7 @@ nav .fa-solid { display: none; }
     nav { padding: 10px 5%; background: #080808; }
     nav .fa-solid { display: block; font-size: 25px; }
     nav ul { 
-        background: #AF0B0B; 
+        background: #AF0B0B; /* Red Mobile Menu */
         position: fixed; 
         top: 0; 
         right: -200px; 
@@ -307,6 +273,13 @@ nav .fa-solid { display: none; }
     nav ul li { display: block; margin: 25px; }
     nav ul .fa-solid { position: absolute; top: 25px; left: 25px; cursor: pointer; }
     
+    /* FIX FOR YOUTUBE BUTTON VISIBILITY ON MOBILE */
+    /* Since menu is Red, we make button White so it pops out */
+    nav ul li a.yt-btn {
+        background: #fff;
+        color: #AF0B0B;
+    }
+
     .sub-title { font-size: 40px; }
     .about-col-1, .about-col-2 { flex-basis: 100%; }
     .tab-links { font-size: 16px; margin-right: 20px; }
