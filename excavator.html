@@ -2,30 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Breeder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hydraulic Excavator | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="excavator.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <div id="plant">
-            <div class="container">
-             <div class="row">
-        <div class="about-col-1">
-           <a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
-        </div>
-        <div class="about-col-2">
-            <h1 class="sub-title">Hydraulic Excavator</h1>        
-        <p> I did this project, named 'Hydraulic Excavator', when I was around 11 years old. I discovered how to build this project on the YouTube platform and drew inspiration from a video by a man from India. The fact that I was able to accomplish this project at that age, and most importantly, having the desire to do so and making efforts towards it, is considered a success for me.  This hydraulic excavator operates entirely on a hydro-mechanical system and incorporates a total of 6 syringes. Three of these syringes are employed to move three different parts on the excavator, while the remaining three control the syringes responsible for moving the parts. At that time, I was new to this field and did not have the basic conditions such as tools, equipment, or a workshop to complete the project. For this reason, the project may seem primitive.</p>
-        <hr>
-        <img class="image" src="4.jpg"> 
-        <img class="image" src="5.jpg">
-        <br>
-        <img class="image" src="2.jpg">
-        <img class="image" src="3.jpg">
-        <br>
-        <img class="image" src="1.jpg">    
-        <img class="image" src="6.jpg"> 
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
     </div>
-    </body>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), #080808), url('2.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Hydraulic <span class="highlight">Excavator</span></h1>
+            <p>Early Engineering Prototype (Built at Age 11)</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">The Origin Story</h2>
+                <p>
+                    I constructed this project at the age of 11, marking my very first steps into the world of engineering. Inspired by open-source creators on YouTube, I set out to replicate a complex mechanical system using only basic household materials.
+                </p>
+                <p>
+                    This excavator operates on a pure <strong>Hydro-Mechanical System</strong> using Pascal's principle. It utilizes a network of 6 syringes filled with fluid: three act as the controls (master cylinders), and three act as the actuators (slave cylinders) to move the boom, arm, and bucket.
+                </p>
+                <p>
+                    Despite lacking proper tools, a workshop, or advanced equipment at the time, the desire to create drove me to complete this functional prototype. It remains a personal milestone, representing the spark that ignited my passion for robotics.
+                </p>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-wrench"></i> Prototype Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-child"></i> Builder Age: 11 Years Old</li>
+                        <li><i class="fa-solid fa-water"></i> System: Hydraulic Fluid Power</li>
+                        <li><i class="fa-solid fa-syringe"></i> Actuators: 6x Standard Syringes</li>
+                        <li><i class="fa-solid fa-arrows-up-down-left-right"></i> Degrees of Freedom: 3-Axis</li>
+                        <li><i class="fa-solid fa-recycle"></i> Materials: Recycled/Handmade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title center-text">Prototype Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="4.jpg" alt="Excavator Side View">
+            </div>
+            <div class="gallery-item">
+                <img src="5.jpg" alt="Excavator Front View">
+            </div>
+            <div class="gallery-item">
+                <img src="2.jpg" alt="Excavator Mechanism">
+            </div>
+            <div class="gallery-item">
+                <img src="3.jpg" alt="Excavator Syringe Detail">
+            </div>
+            <div class="gallery-item">
+                <img src="1.jpg" alt="Excavator Full Shot">
+            </div>
+            <div class="gallery-item">
+                <img src="6.jpg" alt="Excavator Action Shot">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.gallery-item', { interval: 150, origin: 'bottom' });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
+</body>
 </html>
