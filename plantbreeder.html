@@ -2,47 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Breeder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Plant Breeder | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="plantbreeder.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <div id="plant">
-            <div class="container">
-             <div class="row">
-        <div class="about-col-1">
-           <a href="index.html"><i class="fa-solid fa-circle-arrow-left"></i></a>
-            <video id="ilkvid" controls="" loop="" > <source src="pb2.mp4" ></video>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Plant Breeder <span class="highlight">ATC</span></h1>
+            <p>1st Place Winner - "21st Century Schools" Competition</p>
         </div>
-        <div class="about-col-2">
-            <h1 class="sub-title">Plant Breeder</h1>        
-        <p> My first robotics project, "Plant Breeder
-        ATC" which I worked on for seven months, and won
-        1 place in the "21 st Century Schools" competition in 2021
-        that was organised in Western Balkan.
-        "Plant Breeder ATC" is a robotic device that can
-        fulfill all the needs of a plant🌱 that contains various
-        systems for different tasks and enabling the growth
-        of a plant in a dark room regardless of the season.
-        It ensures the efficient growth of the plant by using
-        different sensors, algorithms, and automatic
-        watering💦, solar☀️, and ventilation💨 systems.
-        The device is powered either through an adapter or
-        an internal battery. <br><br>The water tank should be filled
-        for the irrigation system to work. After providing the
-        necessary information about the plant to the device
-        and making adjustments through the control panel,
-        the process begins. After a certain period of time
-        the growth of the plant can be observed.</p>
-        <hr>
-        <p>In this video you see the tomato I grew for 46 days with the "Plant Breeder":  -------  <span>March 2023</span></p>
-        <video id="vid"  controls="" loop=""> <source src="Growingtomato.mp4" ></video>
-        <img class="image" src="pb3.jpeg" alt="">
-        <br>
-        <p>After 46 days, the weather started to warm up and I took it out to the balcony. It continued to grow under the sun.</p>
-        <img class="image" src="domates1.jpg">
-        <img class="image" src="domates2.jpg">
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    My first major robotics project, "Plant Breeder ATC," was developed over seven months and secured 1st place in the 2021 Western Balkan "21st Century Schools" competition.
+                </p>
+                <p>
+                    This robotic ecosystem fulfills all the needs of a plant 🌱. It allows growth in a completely dark room regardless of the season by simulating natural conditions. The device uses advanced algorithms to manage watering 💦, lighting ☀️, and ventilation 💨 automatically.
+                </p>
+                <p>
+                    Powered by either an adapter or an internal battery, the system requires only a filled water tank and initial user input via the control panel to begin the autonomous growing process.
+                </p>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-microchip"></i> System Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-droplet"></i> Automatic Irrigation System</li>
+                        <li><i class="fa-solid fa-sun"></i> Artificial Solar Lighting</li>
+                        <li><i class="fa-solid fa-wind"></i> Smart Ventilation</li>
+                        <li><i class="fa-solid fa-battery-full"></i> Hybrid Power (Battery/AC)</li>
+                        <li><i class="fa-solid fa-sliders"></i> User Control Panel</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </body>
+
+        <h2 class="section-title center-text">System Demonstration</h2>
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="pb2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h2 class="section-title center-text">Growth Progress (46 Days)</h2>
+        <p class="center-text-p">March 2023 - Observing the tomato growth cycle inside the device.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item video-item">
+                <video controls loop>
+                    <source src="Growingtomato.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="pb3.jpeg" alt="Plant Breeder Internal View">
+            </div>
+            <div class="gallery-item">
+                <img src="domates1.jpg" alt="Tomato Growth Stage 1">
+            </div>
+            <div class="gallery-item">
+                <img src="domates2.jpg" alt="Tomato Growth Stage 2">
+            </div>
+        </div>
+
+        <p class="conclusion-text">
+            After 46 days, as the weather warmed up, the plant was moved to the balcony where it successfully continued to grow under the natural sun.
+        </p>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init
+        particlesJS("particles-js", { "particles": { "number": { "value": 60, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 200 });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
+</body>
 </html>
