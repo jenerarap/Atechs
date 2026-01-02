@@ -2,31 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarm System</title>
-    <link rel="stylesheet" href="incubator.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home Security System | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="alarm.css">
 </head>
 <body>
-    <a href="index.html" class="back-icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <div id="plant">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">Alarm System</h1>
-                    <p>This is a simple project that I made for fun in presence of my students and upon long 
-                        request on my YouTube channel. As the name suggests, the aim of the project is to activate 
-                        the alarm when someone unknown enters the room. <br> Full tutorial: <a href="https://youtu.be/Vmx-TQGmRT8?si=iU6OGCHKr5jbC8jU"> Alarm System tutorial</a></p>
-                </div>
-                <div class="about-col-1">
-                    <video id="ilkvid" controls loop >
-                        <source src="1013.mp4" type="video/mp4">
-                    </video>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('alarm.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Home <span class="highlight">Security</span></h1>
+            <p>Motion-Activated Intruder Alert System</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    Developed as a practical demonstration for my students and upon popular request from my YouTube community, this project focuses on essential home security logic.
+                </p>
+                <p>
+                    The system is designed to autonomously monitor a specific zone or entry point. Using a <strong>PIR (Passive Infrared) Motion Sensor</strong>, it detects the thermal signature of a human entering the room. Once movement is detected, the microcontroller triggers a high-decibel active buzzer, providing an immediate auditory warning to deter intruders and alert occupants.
+                </p>
+                <br>
+                <a href="https://youtu.be/Vmx-TQGmRT8?si=iU6OGCHKr5jbC8jU" target="_blank" class="yt-external-btn">
+                    <i class="fa-brands fa-youtube"></i> Watch Tutorial
+                </a>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-shield-halved"></i> System Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-satellite-dish"></i> Sensor: PIR Motion Module</li>
+                        <li><i class="fa-solid fa-bell"></i> Output: Active Piezo Alarm</li>
+                        <li><i class="fa-solid fa-bolt"></i> Trigger Speed: < 0.5 Seconds</li>
+                        <li><i class="fa-solid fa-expand"></i> Range: ~7 Meters Detection</li>
+                        <li><i class="fa-solid fa-microchip"></i> Logic: Real-time Polling</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title center-text">System Demonstration</h2>
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="1013.mp4" type="video/mp4">
+                Your browser does not support video tag.
+            </video>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="alarm.jpg" alt="Security System Setup">
+            </div>
+             <div class="gallery-item">
+                <img src="logo.jpg" alt="Project Badge">
+            </div>
+        </div>
+
     </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 200 });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
-
-
