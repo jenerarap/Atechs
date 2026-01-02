@@ -21,7 +21,6 @@ body {
     background: #080808;
     color: #fff;
     overflow-x: hidden;
-    /* User selection blocked to look like an app */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -95,11 +94,16 @@ nav {
 
 .logo { width: 140px; max-width: 100%; }
 
+/* Default Desktop Menu Styles */
 nav ul li { display: inline-block; list-style: none; margin: 10px 20px; }
 nav ul li a { color: #fff; text-decoration: none; font-size: 18px; position: relative; }
 nav ul li a::after { content: ''; width: 0; height: 3px; background: #AF0B0B; position: absolute; left: 0; bottom: -6px; transition: 0.5s; }
 nav ul li a:hover::after { width: 100%; }
 
+/* Hide Icons on Desktop by default to keep it clean, or keep them if you prefer */
+.nav-icon { margin-right: 8px; color: #AF0B0B; display: none; }
+
+/* YouTube Button */
 nav ul li a.yt-btn {
     background-color: #AF0B0B;
     color: white;
@@ -114,9 +118,7 @@ nav ul li a.yt-btn::after { display: none !important; }
 nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transform: scale(1.05); }
 
 /* Mobile Icons Container */
-.nav-right-mobile {
-    display: none; /* Hidden on desktop */
-}
+.nav-right-mobile { display: none; }
 
 .container { padding: 10px 10%; max-width: 100%; position: relative; z-index: 1; }
 
@@ -201,7 +203,6 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
     transform: translateZ(20px);
 }
 
-/* Permanent Title Label */
 .card-title {
     position: absolute;
     bottom: 0;
@@ -304,26 +305,62 @@ nav .fa-solid { display: none; }
     }
     .mobile-yt-icon:active { transform: scale(0.9); }
 
-    /* Glassmorphism Mobile Menu */
+    /* --- PREMIUM MOBILE MENU UPGRADE --- */
     nav ul { 
-        background: rgba(175, 11, 11, 0.95);
-        backdrop-filter: blur(10px);
+        /* Dark Glass Background */
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(15px);
+        
         position: fixed; 
         top: 0; 
-        right: -200px; 
-        width: 200px; 
+        right: -250px; /* Hidden */
+        width: 250px; /* Wider for premium look */
         height: 100vh; 
-        padding-top: 50px; 
+        padding-top: 80px; /* More space at top */
         z-index: 2; 
+        
         transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.3); 
+        
+        /* Left Border Glow */
+        border-left: 2px solid #AF0B0B;
+        box-shadow: -10px 0 30px rgba(175, 11, 11, 0.2);
     }
-    nav ul li { display: block; margin: 25px; }
-    nav ul .fa-solid { position: absolute; top: 25px; left: 25px; cursor: pointer; }
+
+    nav ul li { 
+        display: block; 
+        margin: 30px 40px; 
+    }
+    
+    nav ul li a {
+        font-size: 20px; /* Larger text */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Show Icons in Mobile Menu */
+    .nav-icon { 
+        display: inline-block; 
+        width: 30px; 
+        text-align: center;
+        font-size: 22px;
+    }
+
+    /* Close Button */
+    nav ul .fa-circle-xmark { 
+        position: absolute; 
+        top: 25px; 
+        left: 25px; 
+        cursor: pointer; 
+        color: #fff;
+        font-size: 30px;
+        transition: 0.3s;
+    }
+    nav ul .fa-circle-xmark:hover { color: #AF0B0B; transform: rotate(90deg); }
     
     nav ul li a.yt-btn {
         background: #fff;
         color: #AF0B0B;
+        justify-content: center;
     }
 
     .sub-title { font-size: 40px; }
