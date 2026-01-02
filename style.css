@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-/* DISABLE BROWSER ZOOM GESTURES */
 html, body {
     touch-action: pan-x pan-y;
 }
@@ -23,13 +22,11 @@ body {
     overflow-x: hidden;
 }
 
-/* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: #1a1a1a; }
 ::-webkit-scrollbar-thumb { background: #AF0B0B; border-radius: 6px; border: 3px solid #1a1a1a; }
 ::-webkit-scrollbar-thumb:hover { background: #ff004f; }
 
-/* SCROLL PROGRESS BAR */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -88,7 +85,6 @@ nav ul li a { color: #fff; text-decoration: none; font-size: 18px; position: rel
 nav ul li a::after { content: ''; width: 0; height: 3px; background: #AF0B0B; position: absolute; left: 0; bottom: -6px; transition: 0.5s; }
 nav ul li a:hover::after { width: 100%; }
 
-/* YouTube Button */
 nav ul li a.yt-btn {
     background-color: #AF0B0B;
     color: white;
@@ -102,9 +98,8 @@ nav ul li a.yt-btn {
 nav ul li a.yt-btn::after { display: none !important; }
 nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transform: scale(1.05); }
 
-/* NEW MOBILE ICONS CONTAINER */
 .nav-right-mobile {
-    display: none; /* Hidden on desktop */
+    display: none;
 }
 
 .container { padding: 10px 10%; max-width: 100%; position: relative; z-index: 1; }
@@ -115,7 +110,6 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 .header-text { margin-top: 25vh; font-size: 30px; }
 .header-text h1 { font-size: 60px; margin-top: 20px; }
 
-/* Clean Typing Effect */
 .typing-text {
     color: #AF0B0B;
     display: inline-block;
@@ -138,7 +132,6 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 .about-col-1 { flex-basis: 35%; margin-bottom: 30px; }
 .about-col-1 img { width: 100%; border-radius: 15px; }
 
-/* Neon Pulse Animation */
 .neon-pulse { box-shadow: 0 0 0 0 rgba(175, 11, 11, 0.7); animation: pulse-red 2s infinite; }
 @keyframes pulse-red {
 	0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(175, 11, 11, 0.7); }
@@ -262,28 +255,25 @@ nav .fa-solid { display: none; }
     
     nav { padding: 10px 5%; background: #080808; }
     
-    /* Reveal Mobile elements */
     .nav-right-mobile {
         display: flex;
         align-items: center;
-        gap: 20px; /* Space between YouTube icon and Hamburger */
+        gap: 20px;
     }
 
     nav .fa-solid { display: block; font-size: 25px; }
     
-    /* Styling for the Mobile-Only YouTube Icon */
     .mobile-yt-icon {
-        color: #AF0B0B; /* Red Icon */
+        color: #AF0B0B;
         font-size: 28px;
         transition: transform 0.3s;
     }
-    .mobile-yt-icon:active {
-        transform: scale(0.9);
-    }
+    .mobile-yt-icon:active { transform: scale(0.9); }
 
-    /* Side Menu */
+    /* New "Glassmorphism" Menu with Liquid Transition */
     nav ul { 
-        background: #AF0B0B; /* Red Mobile Menu */
+        background: rgba(175, 11, 11, 0.95); /* Translucent Red */
+        backdrop-filter: blur(10px); /* Blur Effect */
         position: fixed; 
         top: 0; 
         right: -200px; 
@@ -291,13 +281,12 @@ nav .fa-solid { display: none; }
         height: 100vh; 
         padding-top: 50px; 
         z-index: 2; 
-        transition: right 0.5s; 
+        transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Liquid Slide */
         box-shadow: -5px 0 15px rgba(0,0,0,0.3); 
     }
     nav ul li { display: block; margin: 25px; }
     nav ul .fa-solid { position: absolute; top: 25px; left: 25px; cursor: pointer; }
     
-    /* Make the menu button inside the drawer White so it's visible */
     nav ul li a.yt-btn {
         background: #fff;
         color: #AF0B0B;
