@@ -101,11 +101,19 @@
     </div>
 
     <script>
-        // Particles Init
-        particlesJS("particles-js", { "particles": { "number": { "value": 60, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 60;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
-        // Scroll Reveal
-        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        // Scroll Reveal Config
+        const sr = ScrollReveal({ 
+            distance: '50px', 
+            duration: 2000, 
+            delay: 200, 
+            reset: false // FIX: Prevents elements from disappearing
+        });
+        
         sr.reveal('.hero-content', { origin: 'top' });
         sr.reveal('.details-left', { origin: 'left', delay: 300 });
         sr.reveal('.details-right', { origin: 'right', delay: 300 });
