@@ -8,24 +8,18 @@
     box-sizing: border-box;
 }
 
-/* CRITICAL FIX: Stops Horizontal Scrolling on Mobile */
-html {
-    scroll-behavior: smooth;
+/* THE NUCLEAR FIX: Force screen width to never exceed device width */
+html, body {
     width: 100%;
-    overflow-x: hidden; /* Forces content to stay within screen width */
+    max-width: 100%;
+    overflow-x: hidden !important; /* Forces clip of the hidden menu */
+    position: relative; /* Keeps absolute elements contained */
+    touch-action: pan-y; /* Disables horizontal swipe */
 }
 
 body {
     background: #080808;
     color: #fff;
-    width: 100%;
-    overflow-x: hidden; /* Double protection */
-    position: relative;
-    
-    /* Disables horizontal swipe gestures on phone */
-    touch-action: pan-y; 
-    
-    /* Prevent text selection (optional, makes it feel like an app) */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -66,7 +60,7 @@ input, textarea {
     height: 100vh;
     background-color: #080808;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Ensures header particles don't spill out */
 }
 
 #particles-js {
@@ -331,7 +325,7 @@ nav .fa-solid { display: none; }
         backdrop-filter: blur(15px);
         position: fixed; 
         top: 0; 
-        right: -250px; 
+        right: -250px; /* Hidden off-screen */
         width: 250px; 
         height: 100vh; 
         padding-top: 80px; 
