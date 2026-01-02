@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+/* DISABLE BROWSER ZOOM GESTURES */
 html, body {
     touch-action: pan-x pan-y;
 }
@@ -20,13 +21,27 @@ body {
     background: #080808;
     color: #fff;
     overflow-x: hidden;
+    /* User selection blocked to look like an app */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: #1a1a1a; }
 ::-webkit-scrollbar-thumb { background: #AF0B0B; border-radius: 6px; border: 3px solid #1a1a1a; }
 ::-webkit-scrollbar-thumb:hover { background: #ff004f; }
 
+/* SCROLL PROGRESS BAR */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -98,8 +113,9 @@ nav ul li a.yt-btn {
 nav ul li a.yt-btn::after { display: none !important; }
 nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transform: scale(1.05); }
 
+/* Mobile Icons Container */
 .nav-right-mobile {
-    display: none;
+    display: none; /* Hidden on desktop */
 }
 
 .container { padding: 10px 10%; max-width: 100%; position: relative; z-index: 1; }
@@ -125,7 +141,7 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 @keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: #AF0B0B; } }
 
 /* ------------------------------------------------
-   4. ABOUT SECTION & ANIMATIONS
+   4. ABOUT SECTION
 ------------------------------------------------ */
 #about { padding: 80px 0; color: #ababab; }
 .row { display: flex; justify-content: space-between; flex-wrap: wrap; }
@@ -185,6 +201,23 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
     transform: translateZ(20px);
 }
 
+/* Permanent Title Label */
+.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.project-card:hover .card-title { opacity: 0; }
+
 .layer {
     width: 100%;
     height: 0;
@@ -203,6 +236,7 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
     font-size: 14px;
     transition: height 0.5s;
     transform: translateZ(50px);
+    z-index: 3;
 }
 
 .project-card:hover img { transform: scale(1.1) translateZ(20px); }
@@ -270,10 +304,10 @@ nav .fa-solid { display: none; }
     }
     .mobile-yt-icon:active { transform: scale(0.9); }
 
-    /* New "Glassmorphism" Menu with Liquid Transition */
+    /* Glassmorphism Mobile Menu */
     nav ul { 
-        background: rgba(175, 11, 11, 0.95); /* Translucent Red */
-        backdrop-filter: blur(10px); /* Blur Effect */
+        background: rgba(175, 11, 11, 0.95);
+        backdrop-filter: blur(10px);
         position: fixed; 
         top: 0; 
         right: -200px; 
@@ -281,7 +315,7 @@ nav .fa-solid { display: none; }
         height: 100vh; 
         padding-top: 50px; 
         z-index: 2; 
-        transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Liquid Slide */
+        transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -5px 0 15px rgba(0,0,0,0.3); 
     }
     nav ul li { display: block; margin: 25px; }
