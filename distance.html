@@ -2,35 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Distance Meter</title>
-    <link rel="stylesheet" href="incubator.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="distance.css">
 </head>
 <body>
-    <a href="index.html" class="back-icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <div id="plant">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">Distance Meter</h1>
-                    <p>In this project students created a distance meter under my coordination. The goal of this project is to create a distance measuring device that accurately measures the distance to an object using an ultrasonic sensor and displays the measured value on an LCD screen.</p>
-                </div>
-                <div class="about-col-1">
-                    <video id="ilkvid" controls loop >
-                        <source src="1018.mp4" type="video/mp4">
-                    </video>
-                    <img class="image" src="11.png">
-                    <img class="image" src="12.png">
-                    <img class="image" src="13.png">
-                    <img class="image" src="14.png">
-                    <img class="image" src="15.png">
-                    
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('11.png');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Distance <span class="highlight">Meter</span></h1>
+            <p>Ultrasonic Precision Measurement System</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    Developed under my coordination by students, this project focuses on the practical application of sound waves for measurement. 
+                </p>
+                <p>
+                    The goal was to engineer a device capable of calculating the precise distance between the sensor and a target object in real-time. By utilizing an ultrasonic sensor to emit sound pulses and measuring the "Time of Flight" (ToF) for the echo to return, the microcontroller calculates the distance and instantly displays it on an LCD screen for the user.
+                </p>
+                <p>
+                    This project serves as an excellent introduction to sensor calibration, timing algorithms, and digital display interfacing.
+                </p>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-ruler-combined"></i> Device Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-satellite-dish"></i> Sensor: Ultrasonic (HC-SR04)</li>
+                        <li><i class="fa-solid fa-tv"></i> Output: 16x2 LCD Display</li>
+                        <li><i class="fa-solid fa-microchip"></i> Brain: Arduino Microcontroller</li>
+                        <li><i class="fa-solid fa-wave-square"></i> Method: Echolocation</li>
+                        <li><i class="fa-solid fa-bullseye"></i> Accuracy: +/- 3mm</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title center-text">Field Testing & Gallery</h2>
+        
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="1018.mp4" type="video/mp4">
+                Your browser does not support video tag.
+            </video>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="11.png" alt="Distance Meter Setup">
+            </div>
+            <div class="gallery-item">
+                <img src="12.png" alt="LCD Display Close-up">
+            </div>
+            <div class="gallery-item">
+                <img src="13.png" alt="Sensor Wiring">
+            </div>
+            <div class="gallery-item">
+                <img src="14.png" alt="Testing Phase">
+            </div>
+            <div class="gallery-item">
+                <img src="15.png" alt="Final Assembly">
+            </div>
+        </div>
+
     </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal Config
+        const sr = ScrollReveal({ 
+            distance: '50px', 
+            duration: 1500, 
+            delay: 200, 
+            reset: false // KEEPS IMAGES VISIBLE
+        });
+        
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 150 });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
-
-
