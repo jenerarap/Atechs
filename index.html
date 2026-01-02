@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jener Arapi | Robotics Portfolio</title>
+    <title>Jener Arap | Robotics Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +35,7 @@
             <li><a href="#about" onclick="closemenu()"><i class="fa-solid fa-user nav-icon"></i> About</a></li> 
             <li><a href="#projects" onclick="closemenu()"><i class="fa-solid fa-layer-group nav-icon"></i> Projects</a></li>
             <li><a href="#contact" onclick="closemenu()"><i class="fa-solid fa-paper-plane nav-icon"></i> Contact</a></li>
-            
             <li><a href="http://www.youtube.com/@Mr.Atechs" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-            
             <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
         </ul>
 
@@ -157,7 +155,7 @@
             </div>
 
             <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
-                <img src="11.png" alt="Distance Project">
+                <img src="distance.jpg" alt="Distance Project">
                 <div class="card-title">Distance Measurement</div>
                 <div class="layer">
                     <h2>Distance Measurement</h2>  
@@ -271,7 +269,7 @@
     
     var sidemenu = document.getElementById("sidemenu");
     function openmenu(){ sidemenu.style.right = "0"; }
-    function closemenu(){ sidemenu.style.right = "-250px"; /* Adjusted for wider menu */ }
+    function closemenu(){ sidemenu.style.right = "-250px"; }
 
     // Particles Init
     const isMobile = window.innerWidth < 600;
@@ -300,14 +298,18 @@
     });
     function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
     
+    /* =========================================
+       3D TILT CONFIGURATION (FIXED FOR MOBILE)
+       ========================================= */
     VanillaTilt.init(document.querySelectorAll(".project-card"), {
-        max: 25,
+        max: isMobile ? 5 : 25, // Very subtle on phone, strong on PC
         speed: 400,
         glare: true,
         "max-glare": 0.5,
+        gyroscope: false, // CRITICAL FIX: Disables phone rotation tilting the cards
+        reset: true       // Forces card to snap back to center
     });
 </script>
 
 </body>
 </html>
-
