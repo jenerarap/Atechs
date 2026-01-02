@@ -94,16 +94,13 @@ nav {
 
 .logo { width: 140px; max-width: 100%; }
 
-/* Default Desktop Menu Styles */
 nav ul li { display: inline-block; list-style: none; margin: 10px 20px; }
 nav ul li a { color: #fff; text-decoration: none; font-size: 18px; position: relative; }
 nav ul li a::after { content: ''; width: 0; height: 3px; background: #AF0B0B; position: absolute; left: 0; bottom: -6px; transition: 0.5s; }
 nav ul li a:hover::after { width: 100%; }
 
-/* Hide Icons on Desktop by default to keep it clean, or keep them if you prefer */
 .nav-icon { margin-right: 8px; color: #AF0B0B; display: none; }
 
-/* YouTube Button */
 nav ul li a.yt-btn {
     background-color: #AF0B0B;
     color: white;
@@ -117,7 +114,6 @@ nav ul li a.yt-btn {
 nav ul li a.yt-btn::after { display: none !important; }
 nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transform: scale(1.05); }
 
-/* Mobile Icons Container */
 .nav-right-mobile { display: none; }
 
 .container { padding: 10px 10%; max-width: 100%; position: relative; z-index: 1; }
@@ -179,7 +175,7 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ------------------------------------------------
-   5. PROJECTS SECTION
+   5. PROJECTS SECTION - UPDATED WITH GLOW
 ------------------------------------------------ */
 #projects { padding: 50px 0; }
 .projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
@@ -188,10 +184,30 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     background: #262626;
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    
+    /* NEW: SUBTLE RED GLOW (Idle State) */
+    border: 1px solid rgba(175, 11, 11, 0.2);
+    box-shadow: 0 0 15px rgba(175, 11, 11, 0.1); 
+    
+    /* Smooth transition for interactions */
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover Effect: Brighten the Glow */
+.project-card:hover {
+    border-color: #AF0B0B;
+    box-shadow: 0 0 30px rgba(175, 11, 11, 0.4);
+}
+
+/* NEW: CLICK/PRESS EFFECT (Active State) */
+.project-card:active {
+    transform: scale(0.95) !important; /* Physically shrinks */
+    box-shadow: 0 0 10px rgba(175, 11, 11, 0.6) !important;
+    filter: brightness(0.8); /* Dims slightly */
+    transition: 0.1s; /* Fast snap */
 }
 
 .project-card img {
@@ -305,47 +321,25 @@ nav .fa-solid { display: none; }
     }
     .mobile-yt-icon:active { transform: scale(0.9); }
 
-    /* --- PREMIUM MOBILE MENU UPGRADE --- */
+    /* MENU UPGRADE */
     nav ul { 
-        /* Dark Glass Background */
         background: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(15px);
-        
         position: fixed; 
         top: 0; 
-        right: -250px; /* Hidden */
-        width: 250px; /* Wider for premium look */
+        right: -250px; 
+        width: 250px; 
         height: 100vh; 
-        padding-top: 80px; /* More space at top */
+        padding-top: 80px; 
         z-index: 2; 
-        
         transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        
-        /* Left Border Glow */
         border-left: 2px solid #AF0B0B;
         box-shadow: -10px 0 30px rgba(175, 11, 11, 0.2);
     }
+    nav ul li { display: block; margin: 30px 40px; }
+    nav ul li a { font-size: 20px; display: flex; align-items: center; }
+    .nav-icon { display: inline-block; width: 30px; text-align: center; font-size: 22px; }
 
-    nav ul li { 
-        display: block; 
-        margin: 30px 40px; 
-    }
-    
-    nav ul li a {
-        font-size: 20px; /* Larger text */
-        display: flex;
-        align-items: center;
-    }
-
-    /* Show Icons in Mobile Menu */
-    .nav-icon { 
-        display: inline-block; 
-        width: 30px; 
-        text-align: center;
-        font-size: 22px;
-    }
-
-    /* Close Button */
     nav ul .fa-circle-xmark { 
         position: absolute; 
         top: 25px; 
@@ -368,3 +362,9 @@ nav .fa-solid { display: none; }
     .tab-links { font-size: 16px; margin-right: 20px; }
     .projects-list { grid-template-columns: 1fr; }
 }
+
+/* ------------------------------------------------
+   9. SINGLE PROJECT PAGE STYLES
+------------------------------------------------ */
+/* These specific styles are usually loaded in their own files (incubator.css etc),
+   but if you kept them here, just ensure they are below the media queries. */
