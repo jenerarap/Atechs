@@ -2,45 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obstacle Avoiding Robot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Obstacle Avoiding Robot | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="obstacle.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="index.html" class="back-icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <div id="plant">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">Obstacle Avoiding Robot</h1>
-                    <p>This is an obstacle avoiding robot made by my students under my coordination. Our robot can 
-                        detect obstacles up to 10 cm in front of it and adjust its direction accordingly to avoid 
-                        collisions and obstacles. The ultrasonic sensor sends sound waves straightly which hits an 
-                        obstacle and bounces back. After that, using a mathematical function, it calculates the 
-                        distance between the object and robot. In addition, you can find its full tutorial on my 
-                        YouTube channel: <br> <a href="https://youtu.be/5RZy7fRR-8Y?si=q0qls398MgqP36zK">Obstacle Avoiding Robot Tutorial</a></p>
-                </div>
-                <div class="about-col-1">
-                    <!-- Video -->
-                    <video id="ilkvid" controls loop>
-                        <source src="1014.mp4" type="video/mp4">
-                    </video>
-                    
-                    <hr>
-                    
-                    <!-- Images in a 2x2 grid with minimized size -->
-                    <div class="row">
-                        <img class="image" src="obstacle1.jpg"> 
-                        <img class="image" src="obstacle2.jpg">
-                    </div>
-                    <div class="row">
-                        <img class="image" src="obstacle3.jpg">
-                        <img class="image" src="obstacle4.jpg">
-                    </div>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('obstacle4.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Obstacle <span class="highlight">Robot</span></h1>
+            <p>Autonomous Navigation & Collision Avoidance</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    This autonomous vehicle was built by my students under my coordination, designed to navigate complex environments without human intervention.
+                </p>
+                <p>
+                    The core of its intelligence lies in its <strong>Ultrasonic Sensor</strong> system. It emits sound waves that bounce off obstacles, allowing the robot to calculate distances in real-time using mathematical algorithms. When an object is detected within <strong>10 cm</strong>, the robot instantly halts and autonomously recalculates a new path to avoid collision.
+                </p>
+                <br>
+                <a href="https://youtu.be/5RZy7fRR-8Y?si=q0qls398MgqP36zK" target="_blank" class="yt-external-btn">
+                    <i class="fa-brands fa-youtube"></i> Watch Full Tutorial
+                </a>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-robot"></i> Robot Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-eye"></i> Vision: Ultrasonic Echolocation</li>
+                        <li><i class="fa-solid fa-ruler-horizontal"></i> Detection Range: < 10 cm</li>
+                        <li><i class="fa-solid fa-route"></i> Logic: Real-time Path Correction</li>
+                        <li><i class="fa-solid fa-car-side"></i> Drive: Differential Steering</li>
+                        <li><i class="fa-solid fa-chalkboard-user"></i> Role: Student Project Coordinator</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title center-text">Field Test Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item video-item neon-border">
+                <video controls loop>
+                    <source src="1014.mp4" type="video/mp4">
+                    Your browser does not support video tag.
+                </video>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="obstacle1.jpg" alt="Robot Front View">
+            </div>
+            <div class="gallery-item">
+                <img src="obstacle2.jpg" alt="Robot Side View">
+            </div>
+            <div class="gallery-item">
+                <img src="obstacle3.jpg" alt="Robot Top View">
+            </div>
+            <div class="gallery-item">
+                <img src="obstacle4.jpg" alt="Robot in Action">
+            </div>
+        </div>
+
     </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.gallery-item', { interval: 200, origin: 'bottom' });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
