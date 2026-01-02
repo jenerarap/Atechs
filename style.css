@@ -8,19 +8,24 @@
     box-sizing: border-box;
 }
 
-/* DISABLE BROWSER ZOOM GESTURES */
-html, body {
-    touch-action: pan-x pan-y;
-}
-
+/* CRITICAL FIX: Stops Horizontal Scrolling on Mobile */
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden; /* Forces content to stay within screen width */
 }
 
 body {
     background: #080808;
     color: #fff;
-    overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden; /* Double protection */
+    position: relative;
+    
+    /* Disables horizontal swipe gestures on phone */
+    touch-action: pan-y; 
+    
+    /* Prevent text selection (optional, makes it feel like an app) */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -175,7 +180,7 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ------------------------------------------------
-   5. PROJECTS SECTION - UPDATED WITH GLOW
+   5. PROJECTS SECTION
 ------------------------------------------------ */
 #projects { padding: 50px 0; }
 .projects-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
@@ -188,26 +193,25 @@ nav ul li a.yt-btn:hover { background-color: transparent; color: #AF0B0B; transf
     transform-style: preserve-3d;
     transform: perspective(1000px);
     
-    /* NEW: SUBTLE RED GLOW (Idle State) */
+    /* SUBTLE NEON GLOW */
     border: 1px solid rgba(175, 11, 11, 0.2);
     box-shadow: 0 0 15px rgba(175, 11, 11, 0.1); 
     
-    /* Smooth transition for interactions */
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
-/* Hover Effect: Brighten the Glow */
+/* Hover Effect: Brighten Glow */
 .project-card:hover {
     border-color: #AF0B0B;
     box-shadow: 0 0 30px rgba(175, 11, 11, 0.4);
 }
 
-/* NEW: CLICK/PRESS EFFECT (Active State) */
+/* CLICK EFFECT (Haptic Feel) */
 .project-card:active {
-    transform: scale(0.95) !important; /* Physically shrinks */
+    transform: scale(0.95) !important; 
     box-shadow: 0 0 10px rgba(175, 11, 11, 0.6) !important;
-    filter: brightness(0.8); /* Dims slightly */
-    transition: 0.1s; /* Fast snap */
+    filter: brightness(0.8);
+    transition: 0.1s;
 }
 
 .project-card img {
@@ -362,9 +366,3 @@ nav .fa-solid { display: none; }
     .tab-links { font-size: 16px; margin-right: 20px; }
     .projects-list { grid-template-columns: 1fr; }
 }
-
-/* ------------------------------------------------
-   9. SINGLE PROJECT PAGE STYLES
------------------------------------------------- */
-/* These specific styles are usually loaded in their own files (incubator.css etc),
-   but if you kept them here, just ensure they are below the media queries. */
