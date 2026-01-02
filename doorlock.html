@@ -2,38 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RFID-Based Door Lock System</title>
-    <link rel="stylesheet" href="incubator.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RFID Door Lock | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="doorlock.css">
 </head>
 <body>
-    <a href="index.html" class="back-icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <div id="plant">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">RFID-Based Door Lock System</h1>
-                    <p> The objective of this project is to design and implement a secure door lock system that uses 
-                        RFID technology for access control. The system allows authorized users to unlock the door 
-                        using an RFID card, enhancing security and convenience. I made this project upon the high
-                         demand on YouTube channel. <br> So, you can find the full tutorial on my YouTube channel: <a href="https://youtu.be/2fCuIHc9elo?si=Gyr1bswFk-0z3wzN">RFID-Based Door Lock tutorial</a> </p>
-                </div>
-                <div class="about-col-1">
-                    <video id="ilkvid" controls loop >
-                        <source src="2000.mp4" type="video/mp4">
-                    </video>
-                    <hr>
-                    <img class="image" src="21.png">
-                    <img class="image" src="22.png">
-                    <img class="image" src="23.png">
-                    <img class="image" src="24.png">
-                    
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('21.png');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>RFID <span class="highlight">Access Control</span></h1>
+            <p>Secure Digital Authentication System</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    The objective of this project is to design and implement a secure, contactless door lock system using <strong>RFID (Radio Frequency Identification)</strong> technology.
+                </p>
+                <p>
+                    Created in response to high demand from my YouTube community, this system replaces traditional keys with digital ID cards. It allows only authorized users to unlock the mechanism, significantly enhancing both security and convenience for homes or offices. The system verifies the unique ID of a tag against a stored database before granting access.
+                </p>
+                <br>
+                <a href="https://youtu.be/2fCuIHc9elo?si=Gyr1bswFk-0z3wzN" target="_blank" class="yt-external-btn">
+                    <i class="fa-brands fa-youtube"></i> Watch Full Tutorial
+                </a>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-lock"></i> Security Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-wifi"></i> Tech: RFID (Contactless)</li>
+                        <li><i class="fa-solid fa-id-card"></i> Key: Digital Smart Card/Tag</li>
+                        <li><i class="fa-solid fa-microchip"></i> Controller: Arduino / ESP</li>
+                        <li><i class="fa-solid fa-check-double"></i> Auth: Unique UID Verification</li>
+                        <li><i class="fa-solid fa-door-open"></i> Output: Servo/Relay Mechanism</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title center-text">System Demo & Gallery</h2>
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="2000.mp4" type="video/mp4">
+                Your browser does not support video tag.
+            </video>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="21.png" alt="RFID System Wiring">
+            </div>
+            <div class="gallery-item">
+                <img src="22.png" alt="Card Scanning">
+            </div>
+            <div class="gallery-item">
+                <img src="23.png" alt="Lock Mechanism">
+            </div>
+            <div class="gallery-item">
+                <img src="24.png" alt="System Overview">
+            </div>
+        </div>
+
     </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 200 });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
-
-
