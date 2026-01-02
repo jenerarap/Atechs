@@ -2,37 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Incubator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chicken Incubator | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="incubator.css">
-    <script src="https://kit.fontawesome.com/220f77e8b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="index.html" class="back-icon"><i class="fa-solid fa-circle-arrow-left"></i></a>
-    <div id="plant">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1 class="sub-title">Chicken Incubator</h1>
-                    <p>An incubator that I have worked on for months, designed to hatch chicks from the chicken eggs after 21 days. The machine has a capacity of 112 eggs. It features a mechanism that rotates the eggs at a 45-degree angle every 4 hours, systems that set the temperature to 37.3°C and humidity to 54%. In short, it keeps the process under control from embryo development to chick hatching. The originality of the project is entirely mine.</p>
-                <p>For further watch this: <a href="https://youtu.be/S32RGalpuzk?si=IKivZPTE7RCcqNXg">Chicken Incubator Movie</a></p>
-                </div>
-                <div class="about-col-1">
-                    <img class="image" src="viber_image_2024-12-18_00-12-20-259.jpg">
-                    <img class="image" src="viber_image_2024-12-18_00-12-20-299.jpg">
-                    <img class="image" src="viber_image_2024-12-18_00-12-20-347.jpg">
-                    <video id="ilkvid" controls loop >
-                        <source src="incubator(2).mp4" type="video/mp4">
-                    </video>
-                    <hr>
-                    <video id="ilkvid" controls loop >
-                        <source src="WhatsAppVideo.mp4" type="video/mp4">
-                    </video>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), #080808), url('viber_image_2024-12-18_00-12-20-259.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Chicken <span class="highlight">Incubator</span></h1>
+            <p>Fully Automated Hatching Machine</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    This incubator is the result of months of work, designed to automate the 21-day process of hatching chicks from eggs. The project's originality and design are entirely my own.
+                </p>
+                <p>
+                    It is a fully autonomous system that controls every aspect of embryo development. It features precise temperature and humidity regulation systems to ensure an optimal environment. Furthermore, an automatic mechanism rotates the eggs periodically to prevent the embryo from sticking to the shell, mimicking natural incubation.
+                </p>
+                <br>
+                <a href="https://youtu.be/S32RGalpuzk?si=IKivZPTE7RCcqNXg" target="_blank" class="yt-external-btn">
+                    <i class="fa-brands fa-youtube"></i> Watch the Full Movie
+                </a>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-gears"></i> Technical Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-egg"></i> Capacity: 112 Eggs</li>
+                        <li><i class="fa-solid fa-temperature-high"></i> Temp: 37.3°C (Precise)</li>
+                        <li><i class="fa-solid fa-droplet"></i> Humidity: 54% Constant</li>
+                        <li><i class="fa-solid fa-rotate"></i> Auto-Rotation: Every 4 Hours (45°)</li>
+                        <li><i class="fa-solid fa-clock"></i> Cycle Duration: 21 Days</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title center-text">Build Gallery & Demonstrations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item video-item neon-border">
+                <video controls loop>
+                    <source src="incubator(2).mp4" type="video/mp4">
+                    Your browser does not support video tag.
+                </video>
+            </div>
+             <div class="gallery-item video-item neon-border">
+                 <video controls loop>
+                    <source src="WhatsAppVideo.mp4" type="video/mp4">
+                    Your browser does not support video tag.
+                </video>
+            </div>
+            <div class="gallery-item">
+                <img src="viber_image_2024-12-18_00-12-20-259.jpg" alt="Incubator View 1">
+            </div>
+            <div class="gallery-item">
+                <img src="viber_image_2024-12-18_00-12-20-299.jpg" alt="Incubator View 2">
+            </div>
+            <div class="gallery-item">
+                <img src="viber_image_2024-12-18_00-12-20-347.jpg" alt="Incubator View 3">
+            </div>
+        </div>
+
     </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        // Particles Init (Mobile Optimized)
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.gallery-item', { interval: 200, origin: 'bottom' });
+
+        // 3D Tilt
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
-
-
