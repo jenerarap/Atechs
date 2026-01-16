@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Robotic Arm | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="roboticarm.css">
+</head>
+<body>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('arm1.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Robotic <span class="highlight">Arm</span></h1>
+            <p>4-DOF Mechatronics Student Project</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    This project was successfully built by my students at the <strong>Prizren Yunus Emre Institute</strong> under my coordination.
+                </p>
+                <p>
+                    The goal was to understand the kinematics of industrial robots. The students constructed a 4-Degree-of-Freedom (4-DOF) robotic arm capable of picking and placing objects with decent precision. It features manual control via potentiometers and can be programmed for automatic repetitive tasks.
+                </p>
+                
+                <a href="https://youtu.be/-zwOnxu1uyk?si=D1WVIIUDikuR-Tlk" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-link"></i> View Project Link
+                </a>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-robot"></i> Technical Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-microchip"></i> Controller: Arduino UNO</li>
+                        <li><i class="fa-solid fa-gears"></i> Actuators: 4x MG996R Servos</li>
+                        <li><i class="fa-solid fa-gamepad"></i> Input: Potentiometer</li>
+                        <li><i class="fa-solid fa-arrows-spin"></i> Axis: 4 Degrees of Freedom</li>
+                        <li><i class="fa-solid fa-user-graduate"></i> Builders: Bonevet Students</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title center-text">Functional Demo</h2>
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="roboticarm.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h2 class="section-title center-text">Project Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="arm1.jpg" alt="Robotic Arm Side View">
+            </div>
+            <div class="gallery-item">
+                <img src="arm2.jpg" alt="Gripper Mechanism">
+            </div>
+            <div class="gallery-item">
+                <img src="arm3.jpg" alt="Wiring and Circuit">
+            </div>
+            <div class="gallery-item">
+                <img src="arm4.jpg" alt="Student Assembly">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        const sr = ScrollReveal({ 
+            distance: '50px', 
+            duration: 1500, 
+            delay: 200, 
+            reset: false 
+        });
+        
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 150 });
+
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
+</body>
+</html>
