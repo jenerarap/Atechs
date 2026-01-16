@@ -47,10 +47,63 @@
         
     <div class="container">
         <div class="header-text">
-            <p id="p1">Electronics and Robotics Software</p>
+            <p id="p1">Electronics & Robotics Engineer</p>
             <h1>Hi, I'm <span class="typing-text">Jener</span></h1>
+            
+            <p class="hero-desc">
+                Specializing in autonomous systems and IoT solutions. <br>
+                <strong>Electrical & Electronics Student</strong> 
+                and former <strong>Electronics Instructor</strong> (Bonevet).
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>STEM Certified</span>
+                </div>
+                <div class="stat-line"></div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-code"></i>
+                    <span>C++ & Python</span>
+                </div>
+                <div class="stat-line"></div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span>PCB Design</span>
+                </div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
         </div>
     </div>
+   </div>
+
+   <div id="bonevet-promo">
+       <div class="promo-container large-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.2">
+           
+           <div class="promo-bg-slider">
+               <img src="bonevet_students.jpg" class="active-slide" alt="Bonevet Students">
+               <img src="bonevet1.jpg" alt="Bonevet 1">
+               <img src="bonevet2.jpg" alt="Bonevet 2">
+               <img src="bonevet3.jpg" alt="Bonevet 3">
+               <img src="bonevet4.jpg" alt="Bonevet 4">
+               <img src="bonevet5.jpg" alt="Bonevet 5">
+           </div>
+           
+           <div class="promo-overlay"></div>
+
+           <div class="promo-content">
+               <div class="promo-badge">Featured Experience</div>
+               <h2>Bonevet <span class="highlight">2024-25</span></h2>
+               <p>Instructor & Project Manager at <strong>Prizren Yunus Emre Institute</strong>.</p>
+           </div>
+           <a href="bonevet.html" class="promo-btn">
+               Read Story <i class="fa-solid fa-arrow-right-long"></i>
+           </a>
+       </div>
    </div>
 
    <div id="about">
@@ -104,7 +157,8 @@
 
             <div class="tab-contents" id="experience">
                 <ul>
-                    <li><span>Jun 2024 - Sep 2024</span><br>Electronics & Software Instructor at Bonevet YEE Institute.</li>
+                    <li><span>Jul 2025 - Oct 2025 </span><br>Robotics Instructor at Bonevet YEE Institute.</li>
+                    <li><span>Jun 2024 - Sep 2024 </span><br>Electronics & Software Instructor at Bonevet YEE Institute.</li>
                     <li><span>August 2023</span><br>3D Design Instructor for "Genckomek" program at YEE Institute.</li>
                     <li><span>Jan 2020 - Apr 2022</span><br>Student at "jCoders Academy" - STEM Certified School.</li>
                     <li><span>12 Nov 2021</span><br>1st Place - "21st Century Schools" National Competition.</li>
@@ -113,6 +167,7 @@
 
             <div class="tab-contents" id="education">
                 <ul>
+                    <li><span>2025 - ...</span><br>"Uludag University" Electrical & Electronics Engineering</li> 
                     <li><span>2021 - 2024</span><br>"Gj. Buzuku" Natural Sciences Gymnasium</li> 
                     <li><span>2020 - 2022</span><br>"jCoders Academy" Technology School<br><em>Studied: Programming logic, 3D Design, Robotics, Electronics, and Digital Design.</em></li>
                 </ul>
@@ -161,6 +216,16 @@
                     <h2>Distance Measurement</h2>  
                     <p>Precise distance measurement system using ultrasonic sensors.</p>
                     <a href="distance.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <img src="roboticarm_thumb.jpg" alt="Robotic Arm Project">
+                <div class="card-title">Robotic Arm</div>
+                <div class="layer">
+                    <h2>Robotic Arm</h2>  
+                    <p>4-Axis programmable mechanical arm built by students.</p>
+                    <a href="roboticarm.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
 
@@ -230,27 +295,19 @@
    <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <script>
-    /* =========================================
-       1. BLOCK ZOOMING (SCROLL-SAFE)
-       ========================================= */
+    /* 1. BLOCK ZOOMING */
     document.addEventListener('touchmove', function(event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
-        }
+        if (event.touches.length > 1) { event.preventDefault(); }
     }, { passive: false });
 
     var lastTouchEnd = 0;
     document.addEventListener('touchend', function(event) {
         var now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
+        if (now - lastTouchEnd <= 300) { event.preventDefault(); }
         lastTouchEnd = now;
     }, false);
 
-    /* =========================================
-       2. VISUAL LOGIC
-       ========================================= */
+    /* 2. VISUAL LOGIC */
     window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -271,7 +328,7 @@
     function openmenu(){ sidemenu.style.right = "0"; }
     function closemenu(){ sidemenu.style.right = "-250px"; }
 
-    // Particles Init
+    // Particles
     const isMobile = window.innerWidth < 600;
     const particleCount = isMobile ? 30 : 80;
 
@@ -298,19 +355,38 @@
     });
     function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
     
-    /* =========================================
-       3D TILT CONFIGURATION (FIXED FOR MOBILE)
-       ========================================= */
+    // 3D Tilt
     VanillaTilt.init(document.querySelectorAll(".project-card"), {
-        max: isMobile ? 5 : 25, // Very subtle on phone, strong on PC
+        max: isMobile ? 5 : 25, 
         speed: 400,
         glare: true,
         "max-glare": 0.5,
-        gyroscope: false, // CRITICAL FIX: Disables phone rotation tilting the cards
-        reset: true       // Forces card to snap back to center
+        gyroscope: false, 
+        reset: true 
     });
+    
+    // Tilt for the Promo Banner
+    VanillaTilt.init(document.querySelector(".promo-container"), {
+        max: isMobile ? 3 : 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+        gyroscope: false
+    });
+
+    // ============================================
+    // BACKGROUND IMAGE SLIDER SCRIPT
+    // ============================================
+    const slides = document.querySelectorAll('.promo-bg-slider img');
+    if(slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active-slide');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active-slide');
+        }, 3000); // 3 seconds per slide
+    }
 </script>
 
 </body>
 </html>
-
