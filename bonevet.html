@@ -62,11 +62,48 @@
             </div>
         </div>
 
+        <h2 class="section-title center-text">Distinguished Visitors</h2>
+        <p class="center-text-p">
+            Privileged to host distinguished leaders in technology, defense, and academia to showcase our student innovations.
+            <br> (Tap cards to view gallery)
+        </p>
+
+        <div class="visitors-grid">
+            <div class="visitor-card" onclick="openGallery('selcuk')">
+                <div class="visitor-img">
+                    <img src="visitor_selcuk.jpg" alt="Selçuk Bayraktar">
+                </div>
+                <div class="visitor-info">
+                    <h4>Selçuk Bayraktar</h4>
+                    <span>CTO of Baykar Technology</span>
+                </div>
+            </div>
+
+            <div class="visitor-card" onclick="openGallery('rector')">
+                <div class="visitor-img">
+                    <img src="visitor_rector.jpg" alt="Prof. Dr. Orhan Uzun">
+                </div>
+                <div class="visitor-info">
+                    <h4>Prof. Dr. Orhan Uzun</h4>
+                    <span>Rector of Bartın University</span>
+                </div>
+            </div>
+
+            <div class="visitor-card" onclick="openGallery('spouse')">
+                <div class="visitor-img">
+                    <img src="visitor_spouse.jpg" alt="Mrs. Bayraktaroğlu">
+                </div>
+                <div class="visitor-info">
+                    <h4>Mrs. Bayraktaroğlu</h4>
+                    <span>Spouse of Gen. Selçuk Bayraktaroğlu</span>
+                </div>
+            </div>
+        </div>
+
         <h2 class="section-title center-text">Student Hall of Fame</h2>
         <p class="center-text-p">Selected projects built entirely by my students under my coordination.</p>
         
         <div class="gallery-grid">
-            
             <a href="roboticarm.html" class="student-project-card">
                 <div class="card-img" style="background-image: url('arm1.jpg');"></div>
                 <div class="card-info">
@@ -103,37 +140,37 @@
         <h2 class="section-title center-text">Classroom Moments</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="bonevet1.JPG" alt="Teaching Moment 1">
+                <img src="bonevet1.JPG" alt="Teaching Moment 1" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet2.JPG" alt="Teaching Moment 2">
+                <img src="bonevet2.JPG" alt="Teaching Moment 2" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet3.jpg" alt="Teaching Moment 3">
+                <img src="bonevet3.jpg" alt="Teaching Moment 3" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet9.JPG" alt="Teaching Moment 9">
+                <img src="bonevet9.JPG" alt="Teaching Moment 9" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet14.jpg" alt="Teaching Moment 14">
+                <img src="bonevet14.jpg" alt="Teaching Moment 14" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet10.jpg" alt="Teaching Moment 10">
+                <img src="bonevet10.jpg" alt="Teaching Moment 10" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet7.JPG" alt="Teaching Moment 7">
+                <img src="bonevet7.JPG" alt="Teaching Moment 7" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet8.JPG" alt="Teaching Moment 8">
+                <img src="bonevet8.JPG" alt="Teaching Moment 8" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet11.jpg" alt="Teaching Moment 11">
+                <img src="bonevet11.jpg" alt="Teaching Moment 11" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet12.jpg" alt="Teaching Moment 12">
+                <img src="bonevet12.jpg" alt="Teaching Moment 12" loading="lazy">
             </div>
             <div class="gallery-item">
-                <img src="bonevet13.jpg" alt="Teaching Moment 13">
+                <img src="bonevet13.jpg" alt="Teaching Moment 13" loading="lazy">
             </div>
         </div>
 
@@ -143,10 +180,20 @@
         <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
     </div>
 
+    <div id="imageViewer" class="img-viewer" onclick="closeViewer(event)">
+        <span class="close-btn" onclick="closeViewer(event)">&times;</span>
+        
+        <div class="modal-gallery-container" id="galleryContainer"></div>
+        
+        <div id="caption"></div>
+    </div>
+
     <script>
         const isMobile = window.innerWidth < 600;
         const particleCount = isMobile ? 30 : 70;
-        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+        
+        // Particles Speed = 0.5 (Slow)
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 0.5, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
         const sr = ScrollReveal({ 
             distance: '50px', 
@@ -158,12 +205,61 @@
         sr.reveal('.hero-content', { origin: 'top' });
         sr.reveal('.details-left', { origin: 'left', delay: 300 });
         sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.visitor-card', { interval: 100, origin: 'bottom' });
         sr.reveal('.student-project-card', { interval: 150, origin: 'bottom' });
         sr.reveal('.gallery-item', { interval: 150 });
 
         VanillaTilt.init(document.querySelectorAll(".tech-card"), {
             max: 15, speed: 400, glare: true, "max-glare": 0.2,
         });
+
+        // --- DYNAMIC GALLERY LOGIC ---
+        // UPDATED: Now all images are set to .JPG (Uppercase)
+        const visitorData = {
+            'selcuk': {
+                title: "Selçuk Bayraktar's Visit",
+                images: ["selcuk1.JPG", "selcuk2.JPG", "selcuk3.JPG"]
+            },
+            'rector': {
+                title: "Prof. Dr. Orhan Uzun's Visit",
+                images: ["rector1.JPG", "rector2.JPG", "rector3.JPG"]
+            },
+            'spouse': {
+                title: "Mrs. Bayraktaroğlu's Visit",
+                images: ["spouse1.JPG", "spouse2.JPG", "spouse3.JPG"]
+            }
+        };
+
+        function openGallery(key) {
+            const data = visitorData[key];
+            const viewer = document.getElementById("imageViewer");
+            const container = document.getElementById("galleryContainer");
+            const caption = document.getElementById("caption");
+
+            // 1. Clear previous content
+            container.innerHTML = '';
+            
+            // 2. Set the Title
+            caption.innerText = data.title;
+
+            // 3. Create 3 Image Tags dynamically
+            data.images.forEach(imgSrc => {
+                const img = document.createElement("img");
+                img.src = imgSrc;
+                img.className = "modal-img"; // Applies CSS style
+                container.appendChild(img);
+            });
+
+            // 4. Show Modal
+            viewer.style.display = "flex";
+        }
+
+        function closeViewer(event) {
+            // Close if clicking the background or the X button
+            if (event.target.id === "imageViewer" || event.target.classList.contains("close-btn")) {
+                document.getElementById("imageViewer").style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
