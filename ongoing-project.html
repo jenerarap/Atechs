@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smart Hydroponics | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="bonevet.css">
+</head>
+<body>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), #080808), url('hydro_cover.JPG');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 style="color: #ff9800; font-size: 24px; margin-bottom: 5px;">[WORK IN PROGRESS]</h1>
+            <h1>Smart <span class="highlight">Hydroponics</span></h1>
+            <p>Automated Indoor Grow System</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">The Build & Goal</h2>
+                <p>
+                    I am currently designing and building an automated indoor hydroponics setup specifically optimized to grow leafy greens like lettuce. The goal is to create a self sustaining system where environmental factors and light cycles are fully managed by custom microcontrollers.
+                </p>
+                <p>
+                    So far, I have successfully engineered the core control unit. It utilizes an <strong>Arduino Nano</strong> paired with an <strong>RTC (Real Time Clock) module</strong> to dictate precise 16-hour on / 8-hour off light cycles. Additionally, I wired a <strong>DHT11 sensor</strong> and an OLED display to actively monitor the temperature and humidity levels inside the grow zone.
+                </p>
+                
+                <h2 class="section-title" style="margin-top: 40px;">Current Roadblocks</h2>
+                <p>
+                    Engineering is rarely perfect on the first try. During my initial testing phase, I faced a major setback: my first batch of lettuce failed due to severe mold buildup. The enclosed environment trapped too much humidity without adequate airflow.
+                </p>
+                <p>
+                    <strong>The Fix:</strong> I am currently redesigning the structural layout to incorporate an automated ventilation system that triggers when the DHT11 detects humidity spikes. 
+                </p>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt style="border-color: rgba(255, 152, 0, 0.3);">
+                    <h3><i class="fa-solid fa-microchip" style="color: #ff9800;"></i> Hardware Stack</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-microchip" style="color: #ff9800;"></i> Arduino Nano</li>
+                        <li><i class="fa-solid fa-clock" style="color: #ff9800;"></i> RTC Module (Timing)</li>
+                        <li><i class="fa-solid fa-temperature-half" style="color: #ff9800;"></i> DHT11 Sensor</li>
+                        <li><i class="fa-solid fa-tv" style="color: #ff9800;"></i> OLED Display</li>
+                        <li><i class="fa-solid fa-bars-progress" style="color: #ff9800;"></i> Status: Iterating</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title center-text">Behind the Scenes: Images</h2>
+        <p class="center-text-p">Wiring the RTC modules, sensors, and managing the initial setup.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="hydro1.JPG" alt="Arduino Nano Wiring" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="hydro2.png" alt="OLED Display Test" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="hydro3.JPG" alt="Early Grow Setup" loading="lazy">
+            </div>
+        </div>
+
+        <h2 class="section-title center-text">Project Videos</h2>
+        <p class="center-text-p">Testing the hardware and mechanisms.</p>
+
+        <div class="video-grid">
+            <video class="local-video" controls loading="lazy">
+                <source src="hydro_vid1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <video class="local-video" controls loading="lazy">
+                <source src="hydro_vid2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h2 class="section-title center-text">YouTube Documentation</h2>
+        <p class="center-text-p">Watch the full breakdown and troubleshooting process.</p>
+
+        <div class="yt-container">
+            <iframe src="https://www.youtube.com/embed/am_9LCL_VQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ff9800" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ff9800", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 0.5, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        const sr = ScrollReveal({ distance: '50px', duration: 1500, delay: 200, reset: false });
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.gallery-item', { interval: 150 });
+        sr.reveal('.local-video', { interval: 150 });
+        sr.reveal('.yt-container', { delay: 200, origin: 'bottom' });
+
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), { max: 15, speed: 400, glare: true, "max-glare": 0.2 });
+    </script>
+</body>
+</html>
