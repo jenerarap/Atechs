@@ -576,6 +576,12 @@ nav .fa-solid { display: none; }
         bottom: 80px; /* Move up slightly on mobile to avoid overlap */
         font-size: 30px;
     }
+
+    /* --- KILL MOBILE LAG --- */
+    .ongoing-card {
+        animation: none !important; 
+        box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4) !important; 
+    }
 }
 
 /* ------------------------------------------------
