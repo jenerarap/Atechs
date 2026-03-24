@@ -37,7 +37,7 @@
             <div class="details-left">
                 <h2 class="section-title">The Mission & Purpose</h2>
                 <p>
-                    Serving as both <strong>Instructor and Project Manager</strong> at the <strong>Prizren Yunus Emre Institute</strong>, my primary goal was empowering the youth to enter STEM fields through robotics and engineering.
+                    Serving as both <strong>Instructor and Project Manager</strong> at the <strong>Bonevet YEE</strong>, my primary goal was empowering the youth to enter STEM fields through robotics and engineering.
                 </p>
                 <p>
                     I designed a hands on curriculum that moved beyond theory. We focused on <strong>Creative Problem Solving;</strong> teaching students not just <em>how</em> to wire a circuit, but <em>why</em> it works and how to apply it to solve real world problems using Arduino, IoT, and Robotics.
@@ -75,7 +75,7 @@
                 </div>
                 <div class="visitor-info">
                     <h4>Selçuk Bayraktar</h4>
-                    <span>CTO of Baykar Technology</span>
+                    <span>CEO of Baykar Technology</span>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
                 </div>
                 <div class="visitor-info">
                     <h4>Prof. Dr. Orhan Uzun</h4>
-                    <span>Rector of Bartın University</span>
+                    <span>Rector of Bartin University</span>
                 </div>
             </div>
 
@@ -95,7 +95,7 @@
                 </div>
                 <div class="visitor-info">
                     <h4>Mrs. Bayraktaroğlu</h4>
-                    <span>Spouse of Gen. Selçuk Bayraktaroğlu</span>
+                    <span>Spouse of the Chief of General Staff of the Republic of Turkey</span>
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 <div class="card-img" style="background-image: url('arm1.jpg');"></div>
                 <div class="card-info">
                     <h4>Robotic Arm</h4>
-                    <span>4-DOF Mechatronics</span>
+                    <span>4 DOF Mechatronics</span>
                 </div>
             </a>
 
@@ -192,7 +192,6 @@
         const isMobile = window.innerWidth < 600;
         const particleCount = isMobile ? 30 : 70;
         
-        // Particles Speed = 0.5 (Slow)
         particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 0.5, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
         const sr = ScrollReveal({ 
@@ -214,21 +213,20 @@
         });
 
         // --- DYNAMIC GALLERY LOGIC ---
-        // FILENAMES MATCH YOUR SCREENSHOTS EXACTLY
         const visitorData = {
             'selcuk': {
                 title: "Selçuk Bayraktar's Visit",
-                // GALLERY: Uppercase .JPG
+                // Left as UPPERCASE based on previous instructions
                 images: ["selcuk1.JPG", "selcuk2.JPG", "selcuk3.JPG"]
             },
             'rector': {
                 title: "Prof. Dr. Orhan Uzun's Visit",
-                // GALLERY: Lowercase .jpg
+                // CHANGED TO LOWERCASE .jpg
                 images: ["rector1.jpg", "rector2.jpg", "rector3.jpg"]
             },
             'spouse': {
                 title: "Mrs. Bayraktaroğlu's Visit",
-                // GALLERY: Uppercase .JPG
+                // Left as UPPERCASE based on previous instructions
                 images: ["spouse1.JPG", "spouse2.JPG", "spouse3.JPG"]
             }
         };
