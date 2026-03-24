@@ -37,7 +37,7 @@
             <div class="details-left">
                 <h2 class="section-title">The Origin Story</h2>
                 <p>
-                    I constructed this project at the age of 11, marking my very first steps into the world of engineering. Inspired by open-source creators on YouTube, I set out to replicate a complex mechanical system using only basic household materials.
+                    I constructed this project at the age of 11, marking my very first steps into the world of engineering. Inspired by open source creators on YouTube, I set out to replicate a complex mechanical system using only basic household materials.
                 </p>
                 <p>
                     This excavator operates on a pure <strong>Hydro-Mechanical System</strong> using Pascal's principle. It utilizes a network of 6 syringes filled with fluid: three act as the controls (master cylinders), and three act as the actuators (slave cylinders) to move the boom, arm, and bucket.
@@ -95,14 +95,8 @@
         const particleCount = isMobile ? 30 : 70;
         particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
 
-        // Scroll Reveal Config
-        const sr = ScrollReveal({ 
-            distance: '50px', 
-            duration: 1500, 
-            delay: 200, 
-            reset: false // FIX: Images stay visible after loading
-        });
-
+        // Scroll Reveal
+        const sr = ScrollReveal({ distance: '50px', duration: 2000, delay: 200, reset: true });
         sr.reveal('.hero-content', { origin: 'top' });
         sr.reveal('.details-left', { origin: 'left', delay: 300 });
         sr.reveal('.details-right', { origin: 'right', delay: 300 });
