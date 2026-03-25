@@ -339,24 +339,26 @@
     });
     function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
     
-    // 3D Tilt
-    VanillaTilt.init(document.querySelectorAll(".project-card"), {
-        max: isMobile ? 5 : 25, 
-        speed: 400,
-        glare: true,
-        "max-glare": 0.5,
-        gyroscope: false, 
-        reset: true 
-    });
-    
-    // Tilt for the Promo Banner
-    VanillaTilt.init(document.querySelector(".promo-container"), {
-        max: isMobile ? 3 : 10,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2,
-        gyroscope: false
-    });
+// 3D Tilt - DISABLED ON MOBILE TO PREVENT CRASHES
+    if (!isMobile) {
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 25, 
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+            gyroscope: false, 
+            reset: true 
+        });
+        
+        // Tilt for the Promo Banner (Desktop Only)
+        VanillaTilt.init(document.querySelector(".promo-container"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            gyroscope: false
+        });
+    }
 
     // ============================================
     // BACKGROUND IMAGE SLIDER SCRIPT
