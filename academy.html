@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Academy | Jener Arap</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        @keyframes typing-academy { from { width: 0; } to { width: 8.5ch; } }
+        .typing-text {
+            animation: typing-academy 2.5s steps(7) forwards, blink 0.75s infinite !important;
+        }
+    </style>
+</head>
+<body>
+    
+   <div id="scroll-progress"></div>
+
+   <div id="header">
+    <div id="particles-js"></div>
+    
+    <nav>
+        <img src="logo.jpg" class="logo" alt="Logo">
+        <ul id="sidemenu">
+            <li><a href="index.html" onclick="closemenu()"><i class="fa-solid fa-house nav-icon"></i> Jener's Portfolio</a></li>
+            <li><a href="#tutorial-resources" onclick="closemenu()"><i class="fa-solid fa-book-open nav-icon"></i> Tutorial Resources</a></li>
+            <li><a href="#project-resources" onclick="closemenu()"><i class="fa-solid fa-layer-group nav-icon"></i> Project Resources</a></li>
+            <li><a href="#contact" onclick="closemenu()"><i class="fa-solid fa-paper-plane nav-icon"></i> Contact</a></li>
+            <li><a href="https://www.youtube.com/@Mr.Atechs" target="_blank" class="yt-btn"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+        </ul>
+
+        <div class="nav-right-mobile">
+            <a href="https://www.youtube.com/@Mr.Atechs" target="_blank" class="mobile-yt-icon"><i class="fa-brands fa-youtube"></i></a>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </div>
+    </nav>
+        
+    <div class="container">
+        <div class="header-text">
+            <p id="p1">Open Source Resources & Premium Courses</p>
+            <h1>The <span class="typing-text">Academy</span></h1>
+            <p class="hero-desc">
+                Download the exact circuits, code, and 3D files featured in my YouTube videos to build your own projects.
+            </p>
+        </div>
+    </div>
+
+    <a href="#project-resources" class="scroll-down-arrow" onclick="scrollToPromo(event)">
+        <i class="fa-solid fa-angles-down"></i>
+    </a>
+   </div>
+
+   <div id="project-resources">
+    <div class="container">
+        <h1 class="sub-title">Project Resources</h1>
+        <p style="color: #ababab; margin-bottom: 40px; font-size: 16px;">Click the icons on the cards below to grab the files (.zip) or view the full project details.</p>
+        
+        <div class="projects-list">
+            
+            <div class="project-card ongoing-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="hydro_thumb.jpg" alt="Automated Hydroponics Project">
+                <div class="card-title">Hydroponics</div>
+                <div class="layer">
+                    <h2>Hydroponics</h2>  
+                    <p>Includes: Lighting with RTC timing code and circuit, DHT11 environment monitor code and circuit.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/hydroponics.zip" download="Hydroponics_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/am_9LCL_VQM?si=nOcHnLB-J-ZmvXm8" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #AF0B0B; color: white;"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="roboticarm_thumb.jpg" alt="Robotic Arm Project">
+                <div class="card-title">Robotic Arm</div>
+                <div class="layer">
+                    <h2>Robotic Arm</h2>  
+                    <p>Includes: Code, circuit of the arm and controller, 3D printing STL files.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/robotic_arm.zip" download="Robotic_Arm_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/-zwOnxu1uyk?si=EuOd_5sVYfo-jMhR" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #AF0B0B; color: white;"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="plant.png" alt="Plant Watering Project">
+                <div class="card-title">Plant Watering System</div>
+                <div class="layer">
+                    <h2>Plant Watering System</h2>  
+                    <p>Includes: Soil moisture sensor & watering code, complete wiring schematics.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/plant_watering.zip" download="Plant_Watering_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/sSJCvOWbIkw?si=iHBplO6pMnv-Bebv" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #AF0B0B; color: white;"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="obstacle4.jpg" alt="Obstacle Robot Project">
+                <div class="card-title">Obstacle Avoiding Robot</div>
+                <div class="layer">
+                    <h2>Obstacle Avoiding Robot</h2>  
+                    <p>Includes: Ultrasonic sensor math logic, DC motor driver code, and 3D printable chassis files.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/obstacle_avoiding.zip" download="Obstacle_Avoiding_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/5RZy7fRR-8Y?si=-vHHphukMXIIA48t" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #AF0B0B; color: white;"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="rfidloc.png" alt="Smart Door Project">
+                <div class="card-title">RFID Smart Door</div>
+                <div class="layer">
+                    <h2>RFID Smart Door</h2>  
+                    <p>Includes: RFID access code, solenoid latch mechanism, and security schematics.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/rfid_door.zip" download="RFID_Door_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/2fCuIHc9elo?si=qrUZfx2e9b2htTlX" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #AF0B0B; color: white;"><i class="fa-solid fa-folder-open"></i> Resources</div>
+                <img src="security.png" alt="DIY Home Alarm System">
+                <div class="card-title">DIY Home Alarm Project</div>
+                <div class="layer">
+                    <h2>DIY Home Security</h2>  
+                    <p>Includes: Motion detection logic, alarm triggers, and custom security integration code.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/home_security.zip" download="Home_Security_Project.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/Vmx-TQGmRT8?si=HXdszeKOTR9-1tqZ" target="_blank" title="Watch Project Video"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   </div>
+
+   <div id="tutorial-resources" style="padding-top: 50px;">
+    <div class="container">
+        <h1 class="sub-title">Tutorial Resources</h1>
+        <p style="color: #ababab; margin-bottom: 40px; font-size: 16px;">Download materials, code snippets, and assets from my standalone YouTube tutorials.</p>
+        
+        <div class="projects-list">
+            
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/gemini.png" alt="Tutorial">
+                <div class="card-title">ESP32 With Gemini</div>
+                <div class="layer">
+                    <h2>Controlling ESP32 With Gemini</h2>  
+                    <p>Starter code and wiring diagrams to begin controlling your ESP32 board with Google Gemini.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/esp32_gemini.zip" download="ESP32_Gemini_Tutorial.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/yH28xNS92iQ?si=qIDBcqw3X_bhUG2v" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/esp32_with_phone.png" alt="Tutorial">
+                <div class="card-title">ESP32 With Phone</div>
+                <div class="layer">
+                    <h2>Control ESP32 With Your Phone</h2>  
+                    <p>Advanced integration code for Wi-Fi and Bluetooth control via the ESP32.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/code/code.ino" download="ESP32_Phone_Tutorial.ino" title="Download Code"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/mTu_xhmRPcE?si=-juVhSPexyzBgwJL" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/Control.png" alt="Tutorial">
+                <div class="card-title">What PWM Is?</div>
+                <div class="layer">
+                    <h2>What PWM Is?</h2>  
+                    <p>Code example and theory for Pulse Width Modulation on Arduino.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/Jysd9oZ52-w?si=oknPjmKHjgCRYoVZ" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/one_pin.png" alt="Tutorial">
+                <div class="card-title">One Pin, Many Buttons</div>
+                <div class="layer">
+                    <h2>One Pin, Many Buttons</h2>  
+                    <p>Analog read code to cleanly handle multiple buttons on a single microcontroller pin.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/Xy0uiTy8D7k?si=AOuncOhxz499RhD7" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/sec.png" alt="Tutorial">
+                <div class="card-title">Pass Lock With Single Button</div>
+                <div class="layer">
+                    <h2>Password Lock Using Just One Button</h2>  
+                    <p>Wiring and password verification logic code.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/FvneEQiG-1o?si=VEqjnOiYDpNZ2LHQ" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/mputhumb.png" alt="Tutorial">
+                <div class="card-title">MPU6050 Sensor</div>
+                <div class="layer">
+                    <h2>How To Use MPU6050 With Arduino</h2>  
+                    <p>I2C wiring diagram and precise gyro/accelerometer reading code.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/mpu6050.zip" download="MPU6050_Tutorial.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/rpCcZZJeodY?si=Y1OorWGWBQgiYr1W" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/esp8266.png" alt="Tutorial">
+                <div class="card-title">ESP8266 WiFi Tutorial</div>
+                <div class="layer">
+                    <h2>ESP8266 Wifi Module Tutorial </h2>  
+                    <p>Budget IoT setup, Wi-Fi connection logic, and server pinging code.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/UCQryxP97TM?si=FfvytF92EZZNICG1" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/l298n.png" alt="Tutorial">
+                <div class="card-title">L298N Motor Driver</div>
+                <div class="layer">
+                    <h2>Control DC Motors With L298N Driver</h2>  
+                    <p>L298N motor driver wiring and speed/direction control logic.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/GBDx8lXoeJ8?si=1p4o_Ej7QvNyQ9Sc" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/joystick.png" alt="Tutorial">
+                <div class="card-title">Joystick With Arduino</div>
+                <div class="layer">
+                    <h2>Control Things Using Joystick</h2>  
+                    <p>Analog X/Y coordinate mapping code for generic joystick modules.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="downloads/joystick.zip" download="Joystick_Tutorial.zip" title="Download Files (.zip)"><i class="fa-solid fa-file-zipper"></i></a>
+                        <a href="https://youtu.be/BLryLiBZOUg?si=knr17gO0dzSz7mdc" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/ultrasonic.png" alt="Tutorial">
+                <div class="card-title">HC-SR04 Ultrasonic Sensor</div>
+                <div class="layer">
+                    <h2>Measure Distance With Arduino</h2>  
+                    <p>Distance calculation formulas and HC-SR04 ping code.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/KCIz882QrlE?si=jJe6s3q1XX4ZcCfP" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/relay.png" alt="Tutorial">
+                <div class="card-title">Relay With Arduino</div>
+                <div class="layer">
+                    <h2>Control High Power Devices With Arduino</h2>  
+                    <p>Code and logic to safely switch high-voltage components via relays.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/Cs3tbkj-yFs?si=fITkdTT23-uldRgK" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/bluetooth.png" alt="Tutorial">
+                <div class="card-title">HC-06 Bluetooth Module</div>
+                <div class="layer">
+                    <h2>Send Commands To Arduino Via Bluetooth</h2>  
+                    <p>HC-05/HC-06 serial communication code and smartphone integration.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/p_8LkE4QZXo?si=cymkB5A5iEvLoRua" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/servo.png" alt="Tutorial">
+                <div class="card-title">Servo Motors</div>
+                <div class="layer">
+                    <h2>Servo Motors With Arduino</h2>  
+                    <p>Sweeping logic and precise angle positioning code for standard servos.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/CFFD1DvYZek?si=_3eAiYcEnS3h1_hr" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                <div class="wip-badge" style="background: #2196f3; color: white;"><i class="fa-solid fa-play"></i> Tutorial</div>
+                <img src="imagestutorial/push.png" alt="Tutorial">
+                <div class="card-title">Push Buttons And Pull-Down</div>
+                <div class="layer">
+                    <h2>Buttons And Pull Down Resistors With Arduino</h2>  
+                    <p>Debounce code and reliable state-change logic for simple push buttons.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="https://youtu.be/oG4uEUsT4VU?si=SyIsxtbmMProXJgU" target="_blank" title="Watch on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   </div>
+
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:jener.arap54@gmail.com" class="email-link">jener.arap54@gmail.com</a></p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/jenerarap1" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Mr.Atechs" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/yener.arap.3" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. <br> Robotics & Software Portfolio.</p>
+    </div>
+   </div>
+
+   <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+    /* 1. BLOCK ZOOMING */
+    document.addEventListener('touchmove', function(event) {
+        if (event.touches.length > 1) { event.preventDefault(); }
+    }, { passive: false });
+
+    var lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) { event.preventDefault(); }
+        lastTouchEnd = now;
+    }, false);
+
+    /* 2. VISUAL LOGIC */
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+        document.getElementById('scroll-progress').style.width = scrollPercentage + '%';
+    });
+
+    /* 3. SMART SCROLL FOR ARROW */
+    function scrollToPromo(e) {
+        e.preventDefault();
+        const promoSection = document.getElementById('project-resources'); 
+        promoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){ sidemenu.style.right = "0"; }
+    function closemenu(){ sidemenu.style.right = "-250px"; }
+
+    // Particles
+    const isMobile = window.innerWidth < 600;
+    const particleCount = isMobile ? 30 : 80;
+
+    particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 0.5, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+    // Scroll Reveal
+    const sr = ScrollReveal({ distance: '60px', duration: 2500, delay: 400, reset: false });
+    sr.reveal('.header-text', {delay: 200, origin: 'left'});
+    sr.reveal('.sub-title', {delay: 100, origin: 'top'});
+    sr.reveal('.project-card', {interval: 150}); // Slightly faster reveal for large lists
+    sr.reveal('.contact-left', {delay: 200, origin: 'left'});
+
+    let mybutton = document.getElementById("backToTopBtn");
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { mybutton.style.display = "block"; } else { mybutton.style.display = "none"; } 
+    });
+    function topFunction() { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; }
+    
+    // 3D Tilt - DISABLED ON MOBILE TO PREVENT CRASHES
+    if (!isMobile) {
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 25, 
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+            gyroscope: false, 
+            reset: true 
+        });
+    }
+</script>
+
+</body>
+</html>
