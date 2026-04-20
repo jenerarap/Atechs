@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wireless Controller Glove | Jener Arap</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="roboticarm.css">
+</head>
+<body>
+
+    <div class="project-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <img src="logo.jpg" class="nav-logo" alt="Logo">
+    </div>
+
+    <div class="project-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), #080808), url('glove.jpg');">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Wireless Controller <span class="highlight">Glove</span></h1>
+            <p>Gesture-Based Gaming & Remote Control</p>
+        </div>
+    </div>
+
+    <div class="project-container">
+        
+        <div class="details-row">
+            <div class="details-left">
+                <h2 class="section-title">Project Overview</h2>
+                <p>
+                    Traditional controllers restrict movement to just thumbs and fingers. I engineered this <strong>Wireless Controller Glove</strong> to map physical hand motions directly into digital inputs, replacing the need for a keyboard or standard joystick.
+                </p>
+                <p>
+                   By utilizing an MPU6050 gyroscope and accelerometer, the glove precisely reads the roll of your hand. Tilt left or right to steer smoothly through corners, and use the integrated push buttons to trigger turbo and brakes. I specifically optimized and tested this build to play high speed racing games like <strong>Asphalt 8</strong> perfectly.
+                </p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px;">
+                    <a href="https://www.youtube.com/@Mr.Atechs" target="_blank" class="link-btn">
+                        <i class="fa-brands fa-youtube"></i> Watch Demo
+                    </a>
+                    <a href="academy.html#project-resources" class="link-btn" style="background: transparent; border: 1px solid #ff004f;">
+                        <i class="fa-solid fa-code"></i> Get The Code&Circuit
+                    </a>
+                </div>
+            </div>
+
+            <div class="details-right">
+                <div class="tech-card" data-tilt>
+                    <h3><i class="fa-solid fa-robot"></i> Technical Specs</h3>
+                    <ul class="hardware-list">
+                        <li><i class="fa-solid fa-calendar-days"></i> Date: March 2026</li>
+                        <li><i class="fa-solid fa-microchip"></i> Controller: ESP32</li>
+                        <li><i class="fa-solid fa-compass"></i> IMU Sensor: MPU6050</li>
+                        <li><i class="fa-brands fa-bluetooth"></i> Comm: Built-in Bluetooth</li>
+                        <li><i class="fa-solid fa-battery-full"></i> Power: 18650 Lion Battery</li>
+                        <li><i class="fa-solid fa-code"></i> Programming: C++</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title center-text">Functional Demo</h2>
+        <div class="video-showcase neon-border">
+            <video controls loop autoplay muted>
+                <source src="glove_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h2 class="section-title center-text">Project Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="glove1.jpg" alt="Glove View 1">
+            </div>
+            <div class="gallery-item">
+                <img src="glove2.jpg" alt="Glove View 2">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © <script>document.write(new Date().getFullYear())</script> Jener Arap. Robotics & Software Portfolio.</p>
+    </div>
+
+    <script>
+        const isMobile = window.innerWidth < 600;
+        const particleCount = isMobile ? 30 : 70;
+        particlesJS("particles-js", { "particles": { "number": { "value": particleCount, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+
+        const sr = ScrollReveal({ 
+            distance: '50px', 
+            duration: 1500, 
+            delay: 200, 
+            reset: false 
+        });
+        
+        sr.reveal('.hero-content', { origin: 'top' });
+        sr.reveal('.details-left', { origin: 'left', delay: 300 });
+        sr.reveal('.details-right', { origin: 'right', delay: 300 });
+        sr.reveal('.video-showcase', { origin: 'bottom', delay: 200 });
+        sr.reveal('.gallery-item', { interval: 150 });
+
+        VanillaTilt.init(document.querySelectorAll(".tech-card"), {
+            max: 15, speed: 400, glare: true, "max-glare": 0.2,
+        });
+    </script>
+</body>
+</html>
